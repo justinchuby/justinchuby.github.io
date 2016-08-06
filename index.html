@@ -5,12 +5,24 @@
         </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <script src="https://use.fontawesome.com/23346e3ccd.js"></script>
+        <style>
+          a.icon {
+            padding: 35px 15px 15px 15px;
+            margin: 0 0.5rem 0 0.5rem;
+            border-radius: 6px;
+            -webkit-transition: background 0.5s; /* Safari */
+            transition: background 0.5s;
+          }
+          a.icon:hover {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        </style>
     </head>
     <body>
       <div class="container">
         <div class="row">
           <div class="col s10 offset-s1 m6 offset-m3 l5 offset-l3">
-            <div class="card blue-grey darken-1">
+            <div class="card blue-grey darken-1 hoverable">
               <div class="card-content white-text">
                 <h4 class="white-text light">Aloha !</h4>
                 <p><br>I am <span class="amber-text text-accent-4">Justin Chu</span>, a sophomore student at Carnegie Mellon University. Nice to meet you !<br><br></p>
@@ -18,7 +30,7 @@
             </div>
           </div>
           <div class="col s10 offset-s1 m6 offset-m3 l5 offset-l3">
-            <div class="card blue-grey darken-1">
+            <div class="card blue-grey darken-1 hoverable">
               <div class="card-content white-text">
                 <span class="card-title">CMU Course Find</span>
                 <p>
@@ -33,12 +45,9 @@
           </div>
           <div class="col s10 offset-s1 m6 offset-m3 l5 offset-l3">
             <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <p class="center-align">
-                  <a href="https://github.com/justinchuby/" target="_blank"><i class="fa fa-github fa-3x white-text" aria-hidden="true"></i></a>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="https://www.linkedin.com/in/bangyan-justin-chu-36354765" target="_blank"><i class="fa fa-linkedin-square fa-3x white-text" aria-hidden="true"></i></a>
-                </p>
+              <div class="card-content white-text center-align">
+                <a href="https://github.com/justinchuby/" target="_blank" class="icon"><i class="fa fa-github fa-3x white-text" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/bangyan-justin-chu-36354765" target="_blank" class="icon"><i class="fa fa-linkedin-square fa-3x white-text" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
