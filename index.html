@@ -1,110 +1,204 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>
-    Justin Chu
-  </title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>Justin Chu</title>
   <style>
-    a.icon {
-      padding: 35px 15px 15px 15px;
-      margin: 0 0.5rem 0 0.5rem;
-      border-radius: 6px;
-      -webkit-transition: background 0.5s;
-      /* Safari */
-      transition: background 0.5s;
+    :root {
+      --text: #1a1a1a;
+      --text-dim: #666;
+      --bg: #fafafa;
+      --accent: #2563eb;
+      --border: #e5e5e5;
     }
-    a.icon:hover {
-      background: rgba(0, 0, 0, 0.1);
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e5e5e5;
+        --text-dim: #999;
+        --bg: #111;
+        --accent: #60a5fa;
+        --border: #333;
+      }
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    main {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+    }
+
+    .intro a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .project-name {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .project-desc {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .project-meta {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      opacity: 0.7;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .links a:hover {
+      color: var(--text);
+    }
+
+    .oss {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .oss a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .oss a:hover {
+      border-color: var(--accent);
     }
   </style>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCPXYP1BQZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GCPXYP1BQZ');
-  </script>
 </head>
-
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col s10 offset-s1 m12 blue-grey-text text-darken-2">
-        <div class="card-content">
-          <br/>
-          <h3 class="light"><span class="amber-text text-accent-4" href="">Bangyan (Justin) Chu</span>
-          </h3>
-          <br/>
-          <br/>
-          <p>
-            Nice to meet you! I am <b>Justin Chu</b>, a student studying <b>Electrical and Computer Engineering</b> at <b>Carnegie Mellon University</b>.
-          </p>
-        </div>
-        <div class="">
-          <br/>
-          <a href="https://github.com/justinchuby/" target="_blank" class="icon"><i class="fa fa-github fa-3x blue-grey-text" aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/in/bangyan-justin-chu-36354765" target="_blank" class="icon"><i class="fa fa-linkedin-square fa-3x blue-grey-text" aria-hidden="true"></i></a>
-          <br/><br/><br/>
-        </div>
-        <h4 class="light">CMU Course Find</h4>
-          <p>
-            CMU Course Find is a site with information about all CMU courses. It features real-time information and a easy to use search engine. Built with Django in 2015 and completely rewritten using React.js in the summer of 2017, this web app was born as a 15-112 term project and has been helping students explore and discover cool courses since then.
-          </p>
-          <p> Check it out:
-            <a class="blue-grey-text" href="https://www.cmucoursefind.xyz" target="_blank"><b>cmucoursefind.xyz</b></a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/justinchuby/cmu-coursefind" target="_blank"><i class="fa fa-github fa-2x blue-grey-text" aria-hidden="true"></i></a>
-          </p>
-        <br/>
-        <h4 class="light">Course API online</h4>
-          <p>
-            An online version of the course-api built with Flask and Elasticsearch.
-          </p>
-          <p>
-            Read the <a class="blue-grey-text" href="https://www.justinchuby.com/cmu-courseapi-restful-elasticsearch/" target="_blank"><b>documentation</b></a>.
-          </p>
-        <br/>
-        <h4 class="light">Learn Cantonese</h4>
-          <p>
-            I have been teaching Cantonese as a StuCo instructor at CMU since Fall 2016. We had so much fun! To learn more about Cantonese, a beautiful Chinese dialect spoken by tens of millions of people across the globe, <a class="blue-grey-text" href="https://cantonese.justinchuby.com" target="_black"><b>click here</b></a>.
-          </p>
-        <br/>
-        <h4 class="light">Learn CPR</h4>
-          <p>
-            Did you know that nearly 383,000 out-of-hospital sudden cardiac arrests occur annually, and 88 percent of cardiac arrests occur at home? This means that <b>the life you save with CPR is more likely to be someone you love.</b><sup><a href="http://cprblog.heart.org/cpr-statistics/" title="CPR Statistics, heart.org" target="_blank">[1]</a></sup> CPR stands for Cardiopulmonary resuscitation. It can be performed by anyone, and it's easy to learn!
-          </p>
-          <p>
-            <a class="blue-grey-text" href="https://www.youtube.com/watch?v=-Yqk5cHXsko" target="_black"><b>Equip yourself with CPR</b></a> / <a class="blue-grey-text" href="https://www.youtube.com/watch?v=n5hP4DIBCEE" target="_black"><b>Learn CPR with Ken Jeong</b></a>
-          </p>
-          <p>
-            As a bonus, also <a class="blue-grey-text" href="https://www.youtube.com/watch?v=7CgtIgSyAiU" target="_blank"><b>learn about the Heimlich Maneuver</b></a> to help a choking person.
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-      </div>
-    </div>
-  </div>
-</body>
+  <main>
+    <h1>Justin Chu</h1>
+    <p class="intro">
+      Building tools for AI and language. Staff engineer at
+      <a href="https://microsoft.com">Microsoft</a> working on
+      <a href="https://github.com/microsoft/onnxscript">ONNX</a>.
+      Previously <a href="https://x.company">Google [X]</a>.
+      <a href="https://www.cmu.edu">CMU</a> alum.
+    </p>
 
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <a href="https://justinchuby.github.io/web-praat/" class="project">
+          <div class="project-name">web-praat</div>
+          <div class="project-desc">Browser-based acoustic analysis for phonetics. Spectrogram, formants, pitch tracking, TextGrid editing, Whisper transcription — zero install.</div>
+          <div class="project-meta">TypeScript · WebGPU · 530+ tests</div>
+        </a>
+        <a href="https://github.com/flightdeck-dev/flightdeck-2" class="project">
+          <div class="project-name">Flightdeck</div>
+          <div class="project-desc">Multi-agent orchestration platform. Lead/Director/Worker hierarchy with MCP tools, ACP client, and real-time coordination.</div>
+          <div class="project-meta">TypeScript · SQLite · 800+ tests</div>
+        </a>
+        <a href="https://github.com/microsoft/onnxscript" class="project">
+          <div class="project-name">ONNX Script</div>
+          <div class="project-desc">Authoring ONNX models in Python with a natural syntax. Powering torch.onnx export in PyTorch.</div>
+          <div class="project-meta">Python · 676 commits · Top contributor</div>
+        </a>
+        <a href="https://github.com/justinchuby/formants" class="project">
+          <div class="project-name">Formants</div>
+          <div class="project-desc">Real-time vowel visualization app. See your F1/F2 as you speak.</div>
+          <div class="project-meta">TypeScript · Web Audio API</div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Open Source</h2>
+      <p class="oss">
+        <a href="https://github.com/pytorch/pytorch">pytorch/pytorch</a> · 287 commits<br>
+        <a href="https://github.com/onnx/onnx">onnx/onnx</a> · 161 commits<br>
+        <a href="https://github.com/justinchuby/onnx-safetensors">onnx-safetensors</a> ⭐89<br>
+        <a href="https://github.com/justinchuby/model-explorer-onnx">model-explorer-onnx</a> ⭐69
+      </p>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <div class="links">
+        <a href="https://github.com/justinchuby">GitHub</a>
+        <a href="https://www.linkedin.com/in/bangyan-justin-chu-36354765">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
