@@ -79,7 +79,7 @@
     return out;
   }
   function stableId(value){let h=2166136261;for(const c of String(value)){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return "n"+(h>>>0).toString(36)}
-  function safeLabel(value,max=76){return String(value??"").replace(/\b(?:javascript|vbscript|data)\s*:/gi," ").replace(/\bon\w+\s*=/gi," ").replace(/\b(?:alert|confirm|prompt)\s*\([^)]*\)/gi," ").replace(/\b(?:script|img|iframe|object|embed|svg|math)\b/gi," ").replace(/[\u0000-\u001f\u007f<>\"`{}|]/g," ").replace(/\s+/g," ").trim().slice(0,max)||"unnamed"}
+  function safeLabel(value,max=76){const cleaned=String(value??"").replace(/\b(?:javascript|vbscript|data)\s*:/gi," ").replace(/\bon\w+\s*=/gi," ").replace(/\b(?:alert|confirm|prompt)\s*\([^)]*\)/gi," ").replace(/\b(?:script|img|iframe|object|embed|svg|math)\b/gi," ").replace(/[\u0000-\u001f\u007f<>\"`{}|]/g," ").replace(/\s+/g," ").trim();return [...cleaned].slice(0,max).join("")||"unnamed"}
   function workflowOf(d){return d&&d.pipeline&&d.pipeline.workflow||null}
   function flattenSteps(steps,out=[],parent=null){
     (Array.isArray(steps)?steps:[]).forEach((step,index)=>{if(!isObj(step))return;const item={step,index,parent,depth:parent?parent.depth+1:0};out.push(item);if(Array.isArray(step.setup))flattenSteps(step.setup,out,item);if(Array.isArray(step.steps))flattenSteps(step.steps,out,item);for(const k of ["then","else","body","on_true","on_false"])if(Array.isArray(step[k]))flattenSteps(step[k],out,item)});
